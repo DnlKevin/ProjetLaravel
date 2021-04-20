@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\recipe;
+use App\Models\Recipe;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class recipeFactory extends Factory
+class RecipeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = recipe::class;
+    protected $model = Recipe::class;
 
     /**
      * Define the model's default state.
@@ -22,15 +22,13 @@ class recipeFactory extends Factory
     public function definition()
     {
         return [
-             'id' => $this->faker->id,
-            'author_id' => $this->faker->author_id,
             'title' => $this->faker->title,
-            'content' => $this->faker->content,
-            'ingredients' => $this->faker->ingredients,
-            'url' => $this->faker->url,
-            'tags' => $this->faker->tags,
-            'date' => $this->faker->date,
-            'status' => $this->faker->status,
+            'content' => $this->faker-> paragraph(),
+            'ingredients' => $this->faker->paragraph(),
+            'url' => $this->faker->url(),
+            'tags' => $this->faker->sentence(),
+            'date' => $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
+            'status' => $this->faker->sentence,
         ];
     }
 }

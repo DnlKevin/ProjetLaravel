@@ -2,11 +2,9 @@
 
 namespace Database\Seeders;
 
-use Database\Factories\UserFactory;
 use Illuminate\Database\Seeder;
 
-
-class UserSeeder extends Seeder
+class ContactSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +13,9 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory()
+        \App\Models\Contact::factory()
             ->count(50)
             ->hasPosts(1)
             ->create();
-
     }
 }

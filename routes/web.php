@@ -18,11 +18,11 @@ Route::get('/', function () {
 });*/
 
 use App\Http\Controllers\HomeController;
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/welcome', [HomeController::class, 'index']);
 
-use resources\views\layouts\RecettesController;
-Route::get('/recettes', [RecettesController::class, 'main' ]);
+use App\Http\Controllers\RecettesController;
+Route::get('/recettes', [RecettesController::class, 'index' ]);
 
-use resources\views\layouts\ContactController;
-Route::get('/contact', [ContactController::class, 'main' ]);
+use App\Http\Controllers\ContactController;
+Route::get('/contact', [ContactController::class, 'index' ]);
 

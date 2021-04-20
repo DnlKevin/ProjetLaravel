@@ -9,12 +9,11 @@ class Recipe extends Model
 {
     use HasFactory;
 
-    /**
-    * Get the user that authored the recipe.
-    */
-   public function author()
-   {
-       return $this->belongsTo(User::class,'author_id');
-   }
+    public function author()
+    {
+        return $this->belongsTo(User::class,'author_id');
+    }
+
+    public $timestamps = true;
 
 }

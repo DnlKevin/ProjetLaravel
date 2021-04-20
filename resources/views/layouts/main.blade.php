@@ -34,6 +34,9 @@
   <article class="grid-container">
 
     @yield('content')
+    @section('content')
+    <h1>Home</h1>
+    @endsection
 
   </article>
 
